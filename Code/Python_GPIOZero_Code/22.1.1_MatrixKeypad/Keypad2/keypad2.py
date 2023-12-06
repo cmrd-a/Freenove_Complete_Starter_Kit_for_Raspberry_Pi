@@ -1,4 +1,5 @@
 import time
+
 from gpiozero import InputDevice, OutputDevice
 
 output_pins = [10, 22, 27, 17]
@@ -8,10 +9,10 @@ inputs = list(map(lambda pin: InputDevice(pin, pull_up=True), input_pins))
 outputs = list(map(lambda pin: InputDevice(pin, pull_up=True), output_pins))
 
 mapping = [
-    ['1', '2', '3', 'A'],
-    ['4', '5', '6', 'B'],
-    ['7', '8', '9', 'C'],
-    ['*', '0', '#', 'D'],
+    ["1", "2", "3", "A"],
+    ["4", "5", "6", "B"],
+    ["7", "8", "9", "C"],
+    ["*", "0", "#", "D"],
 ]
 
 pressed = set([])
@@ -24,7 +25,7 @@ while True:
         for i in range(4):
             key = mapping[i][o]
             if inputs[i].is_active:
-                if key == '':
+                if key == "":
                     continue
                 if key not in pressed:
                     print(key)

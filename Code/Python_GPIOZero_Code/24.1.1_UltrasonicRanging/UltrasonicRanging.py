@@ -5,20 +5,23 @@
 # auther      : www.freenove.com
 # modification: 2023/05/13
 ########################################################################
-from gpiozero import DistanceSensor
 from time import sleep
+
+from gpiozero import DistanceSensor
 
 trigPin = 23
 echoPin = 24
-sensor = DistanceSensor(echo=echoPin, trigger=trigPin ,max_distance=3)
+sensor = DistanceSensor(echo=echoPin, trigger=trigPin, max_distance=3)
+
 
 def loop():
     while True:
-        print('Distance: ', sensor.distance * 100,'cm')
+        print("Distance: ", sensor.distance * 100, "cm")
         sleep(1)
-        
-if __name__ == '__main__':     # Program entrance
-    print ('Program is starting...')
+
+
+if __name__ == "__main__":  # Program entrance
+    print("Program is starting...")
     try:
         loop()
     except KeyboardInterrupt:  # Press ctrl-c to end the program.

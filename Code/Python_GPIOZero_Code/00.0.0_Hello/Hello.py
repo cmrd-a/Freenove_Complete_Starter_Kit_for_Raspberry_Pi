@@ -6,7 +6,9 @@
 # modification: 2023/05/11
 ########################################################################
 
+
 def Hello():
-    print('Hello World!')
+    print("Hello World!")
+
 
 Hello()
